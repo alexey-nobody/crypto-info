@@ -1,0 +1,56 @@
+name: crypto_info
+publish_to: 'none'
+
+version: 0.0.1+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  cupertino_icons: 1.0.3
+  dio: 4.0.0
+  equatable: 2.0.3
+  flutter_bloc: 7.2.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: 0.17.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  bloc_test: 8.1.0
+  change_app_package_name: 1.0.0
+  dart_code_metrics: 4.1.0
+  lints: 1.0.1
+  mockito: 5.0.15
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - res/assets/
+    - res/fonts/
+
+fonts:
+  - family: Roboto
+    fonts:
+      - asset: res/fonts/Roboto-Thin.ttf
+        weight: 100
+      - asset: res/fonts/Roboto-Thin.ttf
+        weight: 200
+      - asset: res/fonts/Roboto-Light.ttf
+        weight: 300
+      - asset: res/fonts/Roboto-Regular.ttf
+        weight: 400
+      - asset: res/fonts/Roboto-Medium.ttf
+        weight: 500
+      - asset: res/fonts/Roboto-Semibold.ttf
+        weight: 600
+      - asset: res/fonts/Roboto-Bold.ttf
+        weight: 700
+      - asset: res/fonts/Roboto-Black.ttf
+        weight: 800
+      - asset: res/fonts/Roboto-Black.ttf
+        weight: 900

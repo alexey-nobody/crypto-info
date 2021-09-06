@@ -1,0 +1,4 @@
+{
+    "@@locale": "ru",
+    "helloWorld": "RU Flutter application template with Bloc state manager!"
+}
