@@ -22,7 +22,8 @@ class App extends StatelessWidget {
       initialRoute: RoutesFactory.initialRoute,
       onGenerateRoute: RoutesFactory().getGeneratedRoutes,
       title: 'Template Bloc',
-      theme: lightTheme,
+      theme: darkTheme,
+      themeMode: ThemeMode.dark,
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
         child: child!,
