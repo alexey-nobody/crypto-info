@@ -1,16 +1,16 @@
+import 'package:crypto_info/currency_list/currency_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:crypto_info/common/routes.dart';
-import 'package:crypto_info/home/home_page.dart';
 
 class RoutesFactory {
-  static String get initialRoute => Routes.home;
+  static String get initialRoute => Routes.currencyList;
 
   Map<String, Widget Function(BuildContext)> get _routes => {
-        Routes.home: (context) {
+        Routes.currencyList: (context) {
           return const AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle.light,
-            child: HomePage(),
+            child: CurrencyListPage(),
           );
         },
       };
