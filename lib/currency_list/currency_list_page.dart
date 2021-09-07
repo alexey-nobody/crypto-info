@@ -8,8 +8,13 @@ class CurrencyListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
-        child: Text('Test', style: AppTextStyles.lightTextStyle),
+      body: Stack(
+        children: [
+          const GradientContainer(),
+          Align(
+            child: Text('Test', style: AppTextStyles.lightTextStyle),
+          ),
+        ],
       ),
     );
   }
