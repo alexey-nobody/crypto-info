@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: 0.17.0
+  retrofit: 2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -28,29 +28,28 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  generate: true
   assets:
     - res/assets/
     - res/fonts/
 
 fonts:
-  - family: Roboto
+  - family: 'San Francisco'
     fonts:
-      - asset: res/fonts/Roboto-Thin.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 100
-      - asset: res/fonts/Roboto-Thin.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 200
-      - asset: res/fonts/Roboto-Light.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 300
-      - asset: res/fonts/Roboto-Regular.ttf
+      - asset: res/fonts/SFUIText-Regular.ttf
         weight: 400
-      - asset: res/fonts/Roboto-Medium.ttf
+      - asset: res/fonts/SFUIText-Medium.ttf
         weight: 500
-      - asset: res/fonts/Roboto-Semibold.ttf
+      - asset: res/fonts/SFUIText-Semibold.ttf
         weight: 600
-      - asset: res/fonts/Roboto-Bold.ttf
+      - asset: res/fonts/SFUIText-Bold.ttf
         weight: 700
-      - asset: res/fonts/Roboto-Black.ttf
+      - asset: res/fonts/SFUIText-Bold.ttf
         weight: 800
-      - asset: res/fonts/Roboto-Black.ttf
+      - asset: res/fonts/SFUIText-Heavy.ttf
         weight: 900

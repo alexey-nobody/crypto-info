@@ -16,7 +16,6 @@ void main() {
     buildType: BuildType.dev,
     config: Config(
       logger: DevLogger(),
-      title: 'ENV Flutter application template with Bloc state manager',
       debugOptions: DebugOptions(),
     ),
   );
