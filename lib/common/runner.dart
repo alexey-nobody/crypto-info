@@ -7,6 +7,8 @@ import 'package:crypto_info/app.dart';
 Future<void> run() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  Paint.enableDithering = true;
+
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
