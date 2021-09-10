@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:crypto_info/common/env/config.dart';
 import 'package:crypto_info/common/env/debug_options.dart';
 import 'package:crypto_info/common/env/environment.dart';
 import 'package:crypto_info/common/routes_factory.dart';
 import 'package:crypto_info/common/ui/themes.dart';
+import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

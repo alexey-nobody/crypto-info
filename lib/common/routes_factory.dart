@@ -1,7 +1,7 @@
+import 'package:crypto_info/common/routes.dart';
 import 'package:crypto_info/currency_list/currency_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:crypto_info/common/routes.dart';
 
 class RoutesFactory {
   static String get initialRoute => Routes.currencyList;
