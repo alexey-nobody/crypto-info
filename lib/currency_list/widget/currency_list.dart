@@ -27,14 +27,14 @@ class CurrencyList extends StatelessWidget {
             Expanded(
               child: Text(
                 _currencies[index].name,
-                style: AppTextStyles.boldTextStyle,
+                style: AppTextStyles.regularTextStyle,
               ),
             ),
             Expanded(
               child: Align(
                 child: Text(
                   _currencies[index].baseVolume,
-                  style: AppTextStyles.lightTextStyle,
+                  style: AppTextStyles.regularTextStyle,
                 ),
               ),
             ),
@@ -44,16 +44,30 @@ class CurrencyList extends StatelessWidget {
                 children: [
                   Text(
                     _currencies[index].price,
-                    style: AppTextStyles.mediumTextStyle,
+                    style: AppTextStyles.regularTextStyle,
                   ),
-                  Text(
-                    _currencies[index].percentChange,
-                    style: AppTextStyles.regularTextStyle.copyWith(
-                      color: _currencies[index].priceState ==
-                              CurrencyUiPriceState.rise
-                          ? AppColors.priceRise
-                          : AppColors.priceDrop,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        _currencies[index].percentChange,
+                        style: AppTextStyles.regularTextStyle.copyWith(
+                          color: _currencies[index].priceState ==
+                                  CurrencyUiPriceState.rise
+                              ? AppColors.priceRise
+                              : AppColors.priceDrop,
+                        ),
+                      ),
+                      _currencies[index].priceState == CurrencyUiPriceState.rise
+                          ? const Icon(
+                              Icons.keyboard_arrow_up,
+                              color: AppColors.priceRise,
+                            )
+                          : const Icon(
+                              Icons.keyboard_arrow_down,
+                              color: AppColors.priceDrop,
+                            ),
+                    ],
                   ),
                 ],
               ),
