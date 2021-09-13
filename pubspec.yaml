@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 0.0.1+1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   cupertino_icons: 1.0.3
@@ -15,16 +15,23 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  json_annotation: 4.1.0
   retrofit: 2.0.1
+  logger: 1.1.0
+  get_it: 7.2.0
+  shimmer: 2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   bloc_test: 8.1.0
+  build_runner: 2.1.2
   change_app_package_name: 1.0.0
-  dart_code_metrics: 4.1.0
-  lints: 1.0.1
+  dart_code_metrics: 4.2.1
+  flutter_lints: 1.0.4
   mockito: 5.0.15
+  json_serializable: 5.0.0
+  retrofit_generator: 2.0.1+1
 
 flutter:
   uses-material-design: true
