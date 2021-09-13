@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTextStyles {
   static const _text = TextStyle(
+    fontSize: 16,
     fontStyle: FontStyle.normal,
     color: AppColors.textPrimary,
   );
