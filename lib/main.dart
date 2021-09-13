@@ -11,6 +11,7 @@ void main() {
     config: Config(
       logger: ProductionLogger(),
       debugOptions: DebugOptions(),
+      poloniexApiUrl: 'https://www.poloniex.com/',
     ),
   );
 
