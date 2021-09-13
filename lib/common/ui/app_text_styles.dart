@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class AppTextStyles {
   static const _text = TextStyle(
     fontStyle: FontStyle.normal,
-    color: AppColors.textPrimaryColor,
+    color: AppColors.textPrimary,
   );
 
   // Light

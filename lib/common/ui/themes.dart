@@ -5,5 +5,5 @@ final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   fontFamily: 'San Francisco',
   visualDensity: VisualDensity.adaptivePlatformDensity,
-  primaryColor: AppColors.primaryColor,
+  primaryColor: AppColors.primary,
 );
