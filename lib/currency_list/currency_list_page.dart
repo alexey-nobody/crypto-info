@@ -9,6 +9,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CurrencyListPage extends StatelessWidget {
   const CurrencyListPage({Key? key}) : super(key: key);
 
+  Widget _buildDivider() {
+    return const Divider(
+      height: 20,
+      thickness: 1,
+      indent: 20,
+      endIndent: 20,
+    );
+  }
+
   Widget _buildTitleForCurrencyList() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -50,6 +59,7 @@ class CurrencyListPage extends StatelessWidget {
           return Column(
             children: [
               _buildTitleForCurrencyList(),
+              _buildDivider(),
               Expanded(
                 child: CurrencyList(currencies: state.currencies),
               ),
