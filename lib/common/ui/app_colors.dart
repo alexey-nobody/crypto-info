@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Colors.white;
-  static const textPrimary = Colors.white;
+  static const primary = Color(0xFF808396);
+  static const textPrimary = Color(0xFF808396);
 
   static const priceRise = Color(0xFF46997C);
   static const priceDrop = Color(0xFFB12433);
 
-  static List<Color> backgroundGradient = [
-    Colors.grey[850]!,
-    Colors.grey[900]!,
-    Colors.black,
+  static const List<Color> backgroundGradient = [
+    Color(0xFF161824),
+    Color(0xFF1F2234),
+    Color(0xFF272B42),
   ];
 }

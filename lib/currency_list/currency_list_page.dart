@@ -29,11 +29,16 @@ class CurrencyListPage extends StatelessWidget {
                   Expanded(
                     child: Text(
                       currency.name,
-                      style: AppTextStyles.mediumTextStyle,
+                      style: AppTextStyles.boldTextStyle,
                     ),
                   ),
                   Expanded(
-                    child: Align(child: Text(currency.baseVolume)),
+                    child: Align(
+                      child: Text(
+                        currency.baseVolume,
+                        style: AppTextStyles.lightTextStyle,
+                      ),
+                    ),
                   ),
                   Expanded(
                     child: Column(
@@ -41,12 +46,7 @@ class CurrencyListPage extends StatelessWidget {
                       children: [
                         Text(
                           currency.price,
-                          style: AppTextStyles.regularTextStyle.copyWith(
-                            color:
-                                currency.priceState == CurrencyUiPriceState.rise
-                                    ? AppColors.priceRise
-                                    : AppColors.priceDrop,
-                          ),
+                          style: AppTextStyles.mediumTextStyle,
                         ),
                         Text(
                           currency.percentChange,
