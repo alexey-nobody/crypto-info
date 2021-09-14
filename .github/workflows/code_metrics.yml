@@ -1,0 +1,23 @@
+name: Dart Code Metrics
+
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+      - '!main'
+
+jobs:
+  check:
+    name: Dart Code Metrics
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: dart-code-metrics
+        uses: dart-code-checker/dart-code-metrics-action@v1
+        with:
+          check_unused_files: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
