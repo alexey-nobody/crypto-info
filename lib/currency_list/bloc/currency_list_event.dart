@@ -1,3 +1,4 @@
+import 'package:crypto_info/currency_list/model/currency_list_sorting_type.dart';
 import 'package:equatable/equatable.dart';
 
 class CurrencyListEvent extends Equatable {
@@ -8,3 +9,12 @@ class CurrencyListEvent extends Equatable {
 }
 
 class CurrencyListLoaded extends CurrencyListEvent {}
+
+class CurrencyListSorted extends CurrencyListEvent {
+  const CurrencyListSorted(this.sortType);
+
+  final CurrencyListSortingType sortType;
+
+  @override
+  List<Object?> get props => [sortType];
+}
