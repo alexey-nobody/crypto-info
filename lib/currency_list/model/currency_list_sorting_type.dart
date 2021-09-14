@@ -3,5 +3,5 @@ enum CurrencyListSortingType {
   volumeAsc,
   volumeDesc,
   priceAsc,
-  priceDesc
+  priceDesc,
 }
