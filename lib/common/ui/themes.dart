@@ -6,4 +6,5 @@ final ThemeData darkTheme = ThemeData(
   fontFamily: 'San Francisco',
   visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColor: AppColors.primary,
+  canvasColor: Colors.transparent,
 );
