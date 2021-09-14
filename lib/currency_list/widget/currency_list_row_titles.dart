@@ -45,7 +45,7 @@ class CurrencyListRowTitles extends StatelessWidget {
     return const Icon(
       Icons.keyboard_arrow_down,
       size: 18,
-      color: AppColors.primary,
+      color: AppColors.textPrimary,
     );
   }
 
@@ -53,7 +53,7 @@ class CurrencyListRowTitles extends StatelessWidget {
     return const Icon(
       Icons.keyboard_arrow_up,
       size: 18,
-      color: AppColors.primary,
+      color: AppColors.textPrimary,
     );
   }
 
