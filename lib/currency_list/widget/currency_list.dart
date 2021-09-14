@@ -34,6 +34,9 @@ class CurrencyList extends StatelessWidget {
               child: Align(
                 child: Text(
                   _currencies[index].baseVolume,
+                  maxLines: 1,
+                  softWrap: false,
+                  overflow: TextOverflow.fade,
                   style: AppTextStyles.regularTextStyle,
                 ),
               ),
@@ -44,6 +47,9 @@ class CurrencyList extends StatelessWidget {
                 children: [
                   Text(
                     _currencies[index].price,
+                    maxLines: 1,
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
                     style: AppTextStyles.regularTextStyle,
                   ),
                   Row(
