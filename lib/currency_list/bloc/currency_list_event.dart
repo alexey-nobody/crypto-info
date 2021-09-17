@@ -8,7 +8,9 @@ class CurrencyListEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class CurrencyListLoaded extends CurrencyListEvent {}
+class CurrencyListLoaded extends CurrencyListEvent {
+  const CurrencyListLoaded();
+}
 
 class CurrencyListSorted extends CurrencyListEvent {
   const CurrencyListSorted(this.sortType);
