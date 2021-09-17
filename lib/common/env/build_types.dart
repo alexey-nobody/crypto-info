@@ -1,5 +1,1 @@
-enum BuildType {
-  dev,
-  stage,
-  release,
-}
+enum BuildType { dev, release }

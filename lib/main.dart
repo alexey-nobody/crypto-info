@@ -10,8 +10,8 @@ void main() {
     buildType: BuildType.release,
     config: Config(
       logger: ProductionLogger(),
-      title: 'ENV Flutter application template with Bloc state manager',
       debugOptions: DebugOptions(),
+      poloniexApiUrl: 'https://www.poloniex.com/',
     ),
   );
 

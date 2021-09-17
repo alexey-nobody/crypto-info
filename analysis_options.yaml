@@ -1,4 +1,4 @@
-include: package:lints/recommended.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   plugins:
@@ -16,7 +16,6 @@ dart_code_metrics:
     - maximum-nesting-level: 5
   metrics-exclude:
     - 'test/**'
-    - 'lib/common/routes_factory.dart'
   rules:
     - avoid-wrapping-in-padding
     - always-remove-listener

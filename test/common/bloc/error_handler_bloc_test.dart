@@ -1,11 +1,11 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:crypto_info/common/bloc/error_handler_bloc/error_handler_bloc.dart';
 import 'package:crypto_info/common/bloc/error_handler_bloc/error_handler_event.dart';
 import 'package:crypto_info/common/bloc/error_handler_bloc/error_handler_state.dart';
 import 'package:crypto_info/common/logger/logger.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 
 class MockLogger extends Mock implements Logger {}
 

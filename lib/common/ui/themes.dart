@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:crypto_info/common/ui/app_colors.dart';
+import 'package:flutter/material.dart';
 
-final ThemeData lightTheme = ThemeData(
-  fontFamily: 'Roboto',
+final ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  fontFamily: 'San Francisco',
   visualDensity: VisualDensity.adaptivePlatformDensity,
-  primaryColor: AppColors.primaryColor,
+  primaryColor: AppColors.primary,
+  canvasColor: Colors.transparent,
 );

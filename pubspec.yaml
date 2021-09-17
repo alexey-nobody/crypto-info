@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 0.0.1+1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   cupertino_icons: 1.0.3
@@ -15,42 +15,48 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: 0.17.0
+  json_annotation: 4.1.0
+  retrofit: 2.0.1
+  logger: 1.1.0
+  get_it: 7.2.0
+  shimmer: 2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   bloc_test: 8.1.0
+  build_runner: 2.1.2
   change_app_package_name: 1.0.0
-  dart_code_metrics: 4.1.0
-  lints: 1.0.1
+  dart_code_metrics: 4.2.1
+  flutter_lints: 1.0.4
   mockito: 5.0.15
+  json_serializable: 5.0.0
+  retrofit_generator: 2.0.1+1
 
 flutter:
   uses-material-design: true
-  generate: true
   assets:
     - res/assets/
     - res/fonts/
 
 fonts:
-  - family: Roboto
+  - family: 'San Francisco'
     fonts:
-      - asset: res/fonts/Roboto-Thin.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 100
-      - asset: res/fonts/Roboto-Thin.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 200
-      - asset: res/fonts/Roboto-Light.ttf
+      - asset: res/fonts/SFUIText-Light.ttf
         weight: 300
-      - asset: res/fonts/Roboto-Regular.ttf
+      - asset: res/fonts/SFUIText-Regular.ttf
         weight: 400
-      - asset: res/fonts/Roboto-Medium.ttf
+      - asset: res/fonts/SFUIText-Medium.ttf
         weight: 500
-      - asset: res/fonts/Roboto-Semibold.ttf
+      - asset: res/fonts/SFUIText-Semibold.ttf
         weight: 600
-      - asset: res/fonts/Roboto-Bold.ttf
+      - asset: res/fonts/SFUIText-Bold.ttf
         weight: 700
-      - asset: res/fonts/Roboto-Black.ttf
+      - asset: res/fonts/SFUIText-Bold.ttf
         weight: 800
-      - asset: res/fonts/Roboto-Black.ttf
+      - asset: res/fonts/SFUIText-Heavy.ttf
         weight: 900

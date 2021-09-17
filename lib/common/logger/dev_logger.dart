@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:crypto_info/common/logger/logger.dart';
+import 'package:flutter/material.dart';
 
 class DevLogger extends Logger {
   @override
