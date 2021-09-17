@@ -27,7 +27,7 @@ class CurrencyList extends StatelessWidget {
             Expanded(
               child: Text(
                 _currencies[index].name,
-                style: AppTextStyles.regularTextStyle,
+                style: AppTextStyles.regular,
               ),
             ),
             Expanded(
@@ -37,7 +37,7 @@ class CurrencyList extends StatelessWidget {
                   maxLines: 1,
                   softWrap: false,
                   overflow: TextOverflow.fade,
-                  style: AppTextStyles.regularTextStyle,
+                  style: AppTextStyles.regular,
                 ),
               ),
             ),
@@ -50,14 +50,14 @@ class CurrencyList extends StatelessWidget {
                     maxLines: 1,
                     softWrap: false,
                     overflow: TextOverflow.fade,
-                    style: AppTextStyles.regularTextStyle,
+                    style: AppTextStyles.regular,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         _currencies[index].percentChange,
-                        style: AppTextStyles.regularTextStyle.copyWith(
+                        style: AppTextStyles.regular.copyWith(
                           color: _currencies[index].priceState ==
                                   CurrencyUiPriceState.rise
                               ? AppColors.priceRise

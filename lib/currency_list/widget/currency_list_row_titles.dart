@@ -68,7 +68,7 @@ class CurrencyListRowTitles extends StatelessWidget {
             Expanded(
               child: Text(
                 'Pair',
-                style: AppTextStyles.boldTextStyle.copyWith(fontSize: 18),
+                style: AppTextStyles.bold.copyWith(fontSize: 18),
               ),
             ),
             Expanded(
@@ -84,9 +84,7 @@ class CurrencyListRowTitles extends StatelessWidget {
                     children: [
                       Text(
                         'Volume',
-                        style: AppTextStyles.boldTextStyle.copyWith(
-                          fontSize: 18,
-                        ),
+                        style: AppTextStyles.bold.copyWith(fontSize: 18),
                       ),
                       if (_sortingType == CurrencyListSortingType.volumeAsc)
                         _arrowDownIcon(),
@@ -114,9 +112,7 @@ class CurrencyListRowTitles extends StatelessWidget {
                         _arrowUpIcon(),
                       Text(
                         'Price',
-                        style: AppTextStyles.boldTextStyle.copyWith(
-                          fontSize: 18,
-                        ),
+                        style: AppTextStyles.bold.copyWith(fontSize: 18),
                       ),
                     ],
                   ),

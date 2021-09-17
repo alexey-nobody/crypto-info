@@ -9,22 +9,22 @@ class AppTextStyles {
   );
 
   // Light
-  static TextStyle lightTextStyle = _text.copyWith(
+  static TextStyle light = _text.copyWith(
     fontWeight: FontWeight.w300,
   );
 
   // Regular
-  static TextStyle regularTextStyle = _text.copyWith(
+  static TextStyle regular = _text.copyWith(
     fontWeight: FontWeight.normal,
   );
 
   // Medium
-  static TextStyle mediumTextStyle = _text.copyWith(
+  static TextStyle medium = _text.copyWith(
     fontWeight: FontWeight.w500,
   );
 
   // Bold
-  static TextStyle boldTextStyle = _text.copyWith(
+  static TextStyle bold = _text.copyWith(
     fontWeight: FontWeight.bold,
   );
 }
