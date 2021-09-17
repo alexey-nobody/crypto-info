@@ -18,13 +18,18 @@ class CurrencyUi extends Equatable {
     required String currencyPair,
     required CurrencyDataResponse response,
   }) {
+    final trailingZerosRegExp = RegExp(r'([.]*0+)(?!.*\d)');
+
     return CurrencyUi(
       id: response.id,
       currencyPair: currencyPair,
       name: currencyPair.split('_').reversed.join('/'),
-      price: response.last.toStringAsFixed(8),
+      price:
+          response.last.toStringAsFixed(7).replaceAll(trailingZerosRegExp, ''),
       baseVolume: response.baseVolume.toStringAsFixed(0),
-      percentChange: (response.percentChange * 100).toStringAsFixed(2),
+      percentChange: (response.percentChange * 100)
+          .toStringAsFixed(2)
+          .replaceAll(trailingZerosRegExp, ''),
       priceState: response.percentChange > 0
           ? CurrencyUiPriceState.rise
           : CurrencyUiPriceState.drop,
