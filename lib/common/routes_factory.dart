@@ -17,7 +17,7 @@ class RoutesFactory {
               create: (_) => CurrencyListBloc(
                 errorHandlerBloc: context.read<ErrorHandlerBloc>(),
                 currencyListRepository: getIt<CurrencyListRepository>(),
-              )..add(CurrencyListLoaded()),
+              )..add(const CurrencyListLoaded()),
               child: const AnnotatedRegion<SystemUiOverlayStyle>(
                 value: SystemUiOverlayStyle.light,
                 child: CurrencyListPage(),
