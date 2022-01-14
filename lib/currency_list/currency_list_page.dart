@@ -1,4 +1,4 @@
-import 'package:crypto_info/common/ui/gradient_container.dart';
+import 'package:crypto_info/common/ui/widgets/gradient_container.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_bloc.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_event.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_state.dart';
