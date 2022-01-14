@@ -1,4 +1,4 @@
-import 'package:crypto_info/common/env/build_types.dart';
+import 'package:crypto_info/common/env/build_type.dart';
 import 'package:crypto_info/common/env/config.dart';
 import 'package:crypto_info/common/env/environment.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_repository.dart';

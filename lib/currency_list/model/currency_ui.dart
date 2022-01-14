@@ -1,8 +1,6 @@
 import 'package:crypto_info/currency_list/model/currency_data_response.dart';
 import 'package:equatable/equatable.dart';
 
-enum CurrencyUiPriceState { drop, rise }
-
 class CurrencyUi extends Equatable {
   const CurrencyUi({
     required this.id,
@@ -55,3 +53,5 @@ class CurrencyUi extends Equatable {
         priceState,
       ];
 }
+
+enum CurrencyUiPriceState { drop, rise }

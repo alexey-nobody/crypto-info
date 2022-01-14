@@ -2,8 +2,6 @@ import 'package:crypto_info/currency_list/model/currency_list_sorting_type.dart'
 import 'package:crypto_info/currency_list/model/currency_ui.dart';
 import 'package:equatable/equatable.dart';
 
-enum CurrencyListStateStatus { initial, loading, loaded }
-
 class CurrencyListState extends Equatable {
   const CurrencyListState._({
     required this.status,
@@ -30,3 +28,5 @@ class CurrencyListState extends Equatable {
   @override
   List<Object?> get props => [status, sortingType, currencies];
 }
+
+enum CurrencyListStateStatus { initial, loading, loaded }
