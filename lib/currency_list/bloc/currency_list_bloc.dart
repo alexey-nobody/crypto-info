@@ -14,7 +14,10 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
     required CurrencyListRepository currencyListRepository,
   })  : _currencyListRepository = currencyListRepository,
         _errorHandlerBloc = errorHandlerBloc,
-        super(const CurrencyListState.loading());
+        super(const CurrencyListState.loading()) {
+    on<CurrencyListLoaded>(_mapCurrencyListLoaded);
+    on<CurrencyListSorted>(_mapCurrencyListSorted);
+  }
 
   final ErrorHandlerBloc _errorHandlerBloc;
   final CurrencyListRepository _currencyListRepository;
@@ -68,40 +71,33 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
     return listCurrencyUi;
   }
 
-  @override
-  Stream<CurrencyListState> mapEventToState(CurrencyListEvent event) async* {
-    if (event is CurrencyListLoaded) {
-      yield* _mapCurrencyListLoaded(event);
-    } else if (event is CurrencyListSorted) {
-      yield* _mapCurrencyListSorted(event);
-    }
-  }
-
-  Stream<CurrencyListState> _mapCurrencyListLoaded(
+  Future<void> _mapCurrencyListLoaded(
     CurrencyListLoaded event,
-  ) async* {
+    Emitter emit,
+  ) async {
     try {
-      yield const CurrencyListState.loading();
+      emit(const CurrencyListState.loading());
 
       _currencyResponse = await _currencyListRepository.getCurrency();
 
-      yield CurrencyListState.loaded(
+      emit(CurrencyListState.loaded(
         currencies: _currencyListUi,
         sortingType: _currentSorting,
-      );
+      ));
     } on Exception catch (e, s) {
       _errorHandlerBloc.add(HandleErrorEvent(e, s));
     }
   }
 
-  Stream<CurrencyListState> _mapCurrencyListSorted(
+  Future<void> _mapCurrencyListSorted(
     CurrencyListSorted event,
-  ) async* {
+    Emitter emit,
+  ) async {
     _currentSorting = event.sortType;
 
-    yield CurrencyListState.loaded(
+    emit(CurrencyListState.loaded(
       currencies: _currencyListUi,
       sortingType: _currentSorting,
-    );
+    ));
   }
 }

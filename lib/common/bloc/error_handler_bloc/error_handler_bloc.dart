@@ -5,66 +5,73 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ErrorHandlerBloc extends Bloc<ErrorHandlerEvent, ErrorHandlerState> {
-  ErrorHandlerBloc(this._logger) : super(InitialErrorHandlerState());
+  ErrorHandlerBloc(this._logger) : super(InitialErrorHandlerState()) {
+    on<HandleErrorEvent>(_onHandleErrorEvent);
+  }
 
   final Logger _logger;
 
-  @override
-  Stream<ErrorHandlerState> mapEventToState(ErrorHandlerEvent event) async* {
-    if (event is HandleErrorEvent && event.error is DioError) {
-      yield* _handleDioError(event.error as DioError, event.stackTrace);
-    } else if (event is HandleErrorEvent) {
-      yield* _handleUnknownError(event.error, event.stackTrace);
+  Future<void> _onHandleErrorEvent(
+    HandleErrorEvent event,
+    Emitter<ErrorHandlerState> emit,
+  ) async {
+    if (event.error is DioError) {
+      _handleDioError(event.error as DioError, event.stackTrace, emit);
+    } else {
+      _handleUnknownError(event.error, event.stackTrace, emit);
     }
   }
 
-  Stream<ErrorHandlerState> _handleDioError(
+  void _handleDioError(
     DioError error,
     StackTrace stackTrace,
-  ) async* {
+    Emitter<ErrorHandlerState> emit,
+  ) {
     if (error.type == DioErrorType.connectTimeout ||
         error.type == DioErrorType.receiveTimeout ||
         error.type == DioErrorType.sendTimeout) {
-      yield TimeoutErrorState();
+      emit(TimeoutErrorState());
     } else if (error.type == DioErrorType.response) {
-      yield* _handleDioResponseError(error, stackTrace);
+      _handleDioResponseError(error, stackTrace, emit);
     } else {
-      yield* _handleUnknownError(error, stackTrace);
+      _handleUnknownError(error, stackTrace, emit);
     }
   }
 
-  Stream<ErrorHandlerState> _handleDioResponseError(
+  void _handleDioResponseError(
     DioError error,
     StackTrace stackTrace,
-  ) async* {
+    Emitter<ErrorHandlerState> emit,
+  ) {
     final statusCode = error.response?.statusCode;
     switch (statusCode) {
       case 400:
-        yield ValidationErrorState();
+        emit(ValidationErrorState());
         break;
       case 403:
-        yield ForbiddenErrorState();
+        emit(ForbiddenErrorState());
         break;
       case 404:
-        yield NotFoundErrorState();
+        emit(NotFoundErrorState());
         break;
       case 500:
-        yield InternalServerErrorState();
+        emit(InternalServerErrorState());
         break;
       default:
-        yield* _handleUnknownError(error, stackTrace);
+        _handleUnknownError(error, stackTrace, emit);
     }
   }
 
-  Stream<ErrorHandlerState> _handleUnknownError(
+  void _handleUnknownError(
     Object error,
     StackTrace stackTrace,
-  ) async* {
+    Emitter<ErrorHandlerState> emit,
+  ) {
     _logger.e(
       message: 'Unknown error handled in ErrorHandlerBloc',
       error: error,
       stackTrace: stackTrace,
     );
-    yield UnknownErrorState();
+    emit(UnknownErrorState());
   }
 }

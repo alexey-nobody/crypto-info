@@ -1,4 +1,4 @@
-import 'package:crypto_info/common/env/build_types.dart';
+import 'package:crypto_info/common/env/build_type.dart';
 
 class Environment<T> {
   Environment._({required this.config, BuildType? buildType})
