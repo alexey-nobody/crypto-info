@@ -10,7 +10,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Bloc.observer = DebugBlocObserver();
 
   Environment.init(
     buildType: BuildType.dev,
@@ -21,5 +20,5 @@ void main() {
     ),
   );
 
-  run();
+  BlocOverrides.runZoned(run, blocObserver: DebugBlocObserver());
 }
