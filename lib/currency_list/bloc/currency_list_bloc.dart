@@ -76,8 +76,6 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
     Emitter emit,
   ) async {
     try {
-      emit(const CurrencyListState.loading());
-
       _currencyResponse = await _currencyListRepository.getCurrency();
 
       emit(CurrencyListState.loaded(

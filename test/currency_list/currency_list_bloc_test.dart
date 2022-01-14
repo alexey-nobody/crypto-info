@@ -186,7 +186,6 @@ void main() {
         },
         act: (bloc) async => bloc.add(const CurrencyListLoaded()),
         expect: () => [
-          const CurrencyListState.loading(),
           const CurrencyListState.loaded(
             currencies: currenciesUi,
             sortingType: CurrencyListSortingType.none,
@@ -202,7 +201,7 @@ void main() {
         },
         act: (bloc) async => bloc.add(const CurrencyListLoaded()),
         verify: (_) async => verify(errorHandlerBloc.add(any)).called(1),
-        expect: () => [const CurrencyListState.loading()],
+        expect: () => <dynamic>[],
       );
     });
 
@@ -219,7 +218,6 @@ void main() {
           ..add(const CurrencyListLoaded())
           ..add(const CurrencyListSorted(CurrencyListSortingType.priceAsc)),
         expect: () => [
-          const CurrencyListState.loading(),
           const CurrencyListState.loaded(
             currencies: currenciesUi,
             sortingType: CurrencyListSortingType.none,
@@ -243,7 +241,6 @@ void main() {
           ..add(const CurrencyListLoaded())
           ..add(const CurrencyListSorted(CurrencyListSortingType.priceDesc)),
         expect: () => [
-          const CurrencyListState.loading(),
           const CurrencyListState.loaded(
             currencies: currenciesUi,
             sortingType: CurrencyListSortingType.none,
@@ -267,7 +264,6 @@ void main() {
           ..add(const CurrencyListLoaded())
           ..add(const CurrencyListSorted(CurrencyListSortingType.volumeAsc)),
         expect: () => [
-          const CurrencyListState.loading(),
           const CurrencyListState.loaded(
             currencies: currenciesUi,
             sortingType: CurrencyListSortingType.none,
@@ -291,7 +287,6 @@ void main() {
           ..add(const CurrencyListLoaded())
           ..add(const CurrencyListSorted(CurrencyListSortingType.volumeDesc)),
         expect: () => [
-          const CurrencyListState.loading(),
           const CurrencyListState.loaded(
             currencies: currenciesUi,
             sortingType: CurrencyListSortingType.none,
