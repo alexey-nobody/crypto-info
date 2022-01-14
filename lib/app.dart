@@ -8,6 +8,7 @@ import 'package:crypto_info/common/routes_factory.dart';
 import 'package:crypto_info/common/ui/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -30,15 +31,18 @@ class App extends StatelessWidget {
       title: 'Crypto',
       theme: darkTheme,
       themeMode: ThemeMode.dark,
-      builder: (context, child) => MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
-        child: BlocProvider(
-          create: (_) => ErrorHandlerBloc(
-            Environment<Config>.instance().config.logger,
-          ),
-          child: BlocListener<ErrorHandlerBloc, ErrorHandlerState>(
-            listener: _errorListener.listener,
-            child: child!,
+      builder: (context, child) => ScreenUtilInit(
+        designSize: const Size(360, 760),
+        builder: () => MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1),
+          child: BlocProvider(
+            create: (_) => ErrorHandlerBloc(
+              Environment<Config>.instance().config.logger,
+            ),
+            child: BlocListener<ErrorHandlerBloc, ErrorHandlerState>(
+              listener: _errorListener.listener,
+              child: child!,
+            ),
           ),
         ),
       ),
