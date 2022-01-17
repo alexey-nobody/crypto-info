@@ -31,7 +31,7 @@ class BackArrowButton extends StatelessWidget {
       child: InkWell(
         onTap: () => _onTap(context),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 16.sp),
+          padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 14.sp),
           child: SvgPicture.asset(
             AppAssets.backArrowButton,
             width: 36.sp,
