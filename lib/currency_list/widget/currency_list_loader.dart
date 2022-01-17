@@ -1,5 +1,6 @@
 import 'package:crypto_info/common/ui/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CurrencyListLoader extends StatelessWidget {
@@ -10,14 +11,14 @@ class CurrencyListLoader extends StatelessWidget {
     return ListView.builder(
       itemCount: 4,
       itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
         child: Shimmer.fromColors(
           baseColor: AppColors.primary,
           highlightColor: AppColors.shimmerHighlight,
           child: Container(
             color: Colors.white,
             width: MediaQuery.of(context).size.width,
-            height: 60,
+            height: 60.sp,
           ),
         ),
       ),
