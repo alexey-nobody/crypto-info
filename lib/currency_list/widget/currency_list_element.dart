@@ -32,18 +32,19 @@ class CurrencyListElement extends StatelessWidget {
               Expanded(
                 child: Text(_currency.name, style: AppTextStyles.regular),
               ),
+              SizedBox(width: 4.sp),
               Expanded(
-                child: Align(
-                  child: Text(
-                    _currency.baseVolume,
-                    maxLines: 1,
-                    softWrap: false,
-                    overflow: TextOverflow.fade,
-                    style: AppTextStyles.regular,
-                  ),
+                child: Text(
+                  _currency.baseVolume,
+                  maxLines: 1,
+                  softWrap: false,
+                  overflow: TextOverflow.fade,
+                  style: AppTextStyles.regular,
+                  textAlign: TextAlign.center,
                 ),
               ),
-              CurrencyPrice(currency: _currency),
+              SizedBox(width: 4.sp),
+              Expanded(child: CurrencyPrice(currency: _currency)),
             ],
           ),
         ),
