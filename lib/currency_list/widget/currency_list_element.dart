@@ -1,6 +1,6 @@
 import 'package:crypto_info/common/routes.dart';
-import 'package:crypto_info/common/ui/app_colors.dart';
 import 'package:crypto_info/common/ui/app_text_styles.dart';
+import 'package:crypto_info/common/ui/widgets/currency_price.dart';
 import 'package:crypto_info/currency_list/model/currency_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,43 +43,7 @@ class CurrencyListElement extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      _currency.price,
-                      maxLines: 1,
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: AppTextStyles.regular,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          _currency.percentChange,
-                          style: AppTextStyles.regular.copyWith(
-                            color: _currency.priceState ==
-                                    CurrencyUiPriceState.rise
-                                ? AppColors.priceRise
-                                : AppColors.priceDrop,
-                          ),
-                        ),
-                        _currency.priceState == CurrencyUiPriceState.rise
-                            ? const Icon(
-                                Icons.keyboard_arrow_up,
-                                color: AppColors.priceRise,
-                              )
-                            : const Icon(
-                                Icons.keyboard_arrow_down,
-                                color: AppColors.priceDrop,
-                              ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              CurrencyPrice(currency: _currency),
             ],
           ),
         ),
