@@ -34,7 +34,7 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
               style: AppTextStyles.bold,
             ),
             Text(
-              'Volume',
+              'Volume (${_currency.name.split('/')[1]})',
               style: AppTextStyles.bold,
             ),
           ],
