@@ -1,6 +1,9 @@
 import 'package:crypto_info/common/bloc/error_handler_bloc/error_handler_bloc.dart';
 import 'package:crypto_info/common/di/di.dart';
 import 'package:crypto_info/common/routes.dart';
+import 'package:crypto_info/currency_details/bloc/currency_detail_bloc.dart';
+import 'package:crypto_info/currency_details/bloc/currency_detail_event.dart';
+import 'package:crypto_info/currency_details/bloc/currency_detail_repository.dart';
 import 'package:crypto_info/currency_details/currency_detail_page.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_bloc.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_event.dart';
@@ -29,9 +32,16 @@ class RoutesFactory {
           final currency =
               ModalRoute.of(context)!.settings.arguments as CurrencyUi;
 
-          return AnnotatedRegion<SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle.light,
-            child: CurrencyDetailPage(currency: currency),
+          return BlocProvider(
+            create: (_) => CurrencyDetailBloc(
+              errorHandlerBloc: context.read<ErrorHandlerBloc>(),
+              currencyDetailRepository: getIt<CurrencyDetailRepository>(),
+              currencyPair: currency.currencyPair,
+            )..add(const CurrencyDetailLoaded()),
+            child: AnnotatedRegion<SystemUiOverlayStyle>(
+              value: SystemUiOverlayStyle.light,
+              child: CurrencyDetailPage(currency: currency),
+            ),
           );
         },
       };
