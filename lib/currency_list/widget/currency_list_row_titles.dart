@@ -2,6 +2,7 @@ import 'package:crypto_info/common/ui/app_colors.dart';
 import 'package:crypto_info/common/ui/app_text_styles.dart';
 import 'package:crypto_info/currency_list/model/currency_list_sorting_type.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrencyListRowTitles extends StatelessWidget {
   const CurrencyListRowTitles({
@@ -42,17 +43,17 @@ class CurrencyListRowTitles extends StatelessWidget {
   }
 
   Widget _arrowDownIcon() {
-    return const Icon(
+    return Icon(
       Icons.keyboard_arrow_down,
-      size: 18,
+      size: 18.sp,
       color: AppColors.textPrimary,
     );
   }
 
   Widget _arrowUpIcon() {
-    return const Icon(
+    return Icon(
       Icons.keyboard_arrow_up,
-      size: 18,
+      size: 18.sp,
       color: AppColors.textPrimary,
     );
   }
@@ -61,14 +62,14 @@ class CurrencyListRowTitles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+        margin: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
               child: Text(
                 'Pair',
-                style: AppTextStyles.bold.copyWith(fontSize: 18),
+                style: AppTextStyles.bold.copyWith(fontSize: 18.sp),
               ),
             ),
             Expanded(
@@ -78,13 +79,13 @@ class CurrencyListRowTitles extends StatelessWidget {
                 ),
                 onTap: _onChangeVolumeSorting,
                 child: Container(
-                  margin: const EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10.sp),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Volume',
-                        style: AppTextStyles.bold.copyWith(fontSize: 18),
+                        style: AppTextStyles.bold.copyWith(fontSize: 18.sp),
                       ),
                       if (_sortingType == CurrencyListSortingType.volumeAsc)
                         _arrowDownIcon(),
@@ -102,7 +103,7 @@ class CurrencyListRowTitles extends StatelessWidget {
                 ),
                 onTap: _onChangePriceSorting,
                 child: Container(
-                  margin: const EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10.sp),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -112,7 +113,7 @@ class CurrencyListRowTitles extends StatelessWidget {
                         _arrowUpIcon(),
                       Text(
                         'Price',
-                        style: AppTextStyles.bold.copyWith(fontSize: 18),
+                        style: AppTextStyles.bold.copyWith(fontSize: 18.sp),
                       ),
                     ],
                   ),

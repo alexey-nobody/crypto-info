@@ -1,9 +1,10 @@
 import 'package:crypto_info/common/ui/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyles {
-  static const _text = TextStyle(
-    fontSize: 16,
+  static final _text = TextStyle(
+    fontSize: 16.sp,
     fontStyle: FontStyle.normal,
     color: AppColors.textPrimary,
   );

@@ -1,4 +1,4 @@
-import 'package:crypto_info/common/ui/gradient_container.dart';
+import 'package:crypto_info/common/ui/widgets/gradient_container.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_bloc.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_event.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_state.dart';
@@ -8,6 +8,7 @@ import 'package:crypto_info/currency_list/widget/currency_list_loader.dart';
 import 'package:crypto_info/currency_list/widget/currency_list_row_titles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrencyListPage extends StatelessWidget {
   const CurrencyListPage({Key? key}) : super(key: key);
@@ -32,11 +33,11 @@ class CurrencyListPage extends StatelessWidget {
                   sortingType,
                 ),
               ),
-              const Divider(
-                height: 1,
-                thickness: 0.5,
-                indent: 20,
-                endIndent: 20,
+              Divider(
+                height: 1.sp,
+                thickness: 0.5.sp,
+                indent: 20.sp,
+                endIndent: 20.sp,
               ),
               if (state.status == CurrencyListStateStatus.loading)
                 const Expanded(child: CurrencyListLoader()),
