@@ -33,6 +33,7 @@ dev_dependencies:
   change_app_package_name: 1.0.0
   dart_code_metrics: 4.9.1
   flutter_lints: 1.0.4
+  flutter_launcher_icons: 0.9.2
   mockito: 5.0.17
   json_serializable: 6.1.4
   retrofit_generator: 3.0.1
@@ -64,3 +65,12 @@ fonts:
         weight: 800
       - asset: res/fonts/SFUIText-Heavy.ttf
         weight: 900
+
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path_ios: "res/icon/icon.png"
+  image_path_android: "res/icon/icon_android.png"
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: "res/icon/icon_android.png"
