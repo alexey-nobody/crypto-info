@@ -30,7 +30,10 @@ class CurrencyListElement extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Text(_currency.name, style: AppTextStyles.regular),
+                child: Text(
+                  _currency.name,
+                  style: AppTextStyles.bold.copyWith(fontSize: 14.sp),
+                ),
               ),
               SizedBox(width: 4.sp),
               Expanded(
@@ -39,7 +42,7 @@ class CurrencyListElement extends StatelessWidget {
                   maxLines: 1,
                   softWrap: false,
                   overflow: TextOverflow.fade,
-                  style: AppTextStyles.regular,
+                  style: AppTextStyles.regular.copyWith(fontSize: 14.sp),
                   textAlign: TextAlign.center,
                 ),
               ),
