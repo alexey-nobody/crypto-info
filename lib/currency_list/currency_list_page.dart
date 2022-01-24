@@ -6,6 +6,7 @@ import 'package:crypto_info/currency_list/model/currency_list_sorting_type.dart'
 import 'package:crypto_info/currency_list/widget/currency_list.dart';
 import 'package:crypto_info/currency_list/widget/currency_list_loader.dart';
 import 'package:crypto_info/currency_list/widget/currency_list_row_titles.dart';
+import 'package:crypto_info/currency_list/widget/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,6 +27,7 @@ class CurrencyListPage extends StatelessWidget {
         builder: (context, state) {
           return Column(
             children: [
+              const Logo(),
               CurrencyListRowTitles(
                 sortingType: state.sortingType,
                 onChangeSorting: (sortingType) => onChangeSorting(
