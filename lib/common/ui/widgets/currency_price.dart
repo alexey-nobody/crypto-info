@@ -2,6 +2,7 @@ import 'package:crypto_info/common/ui/app_colors.dart';
 import 'package:crypto_info/common/ui/app_text_styles.dart';
 import 'package:crypto_info/currency_list/model/currency_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrencyPrice extends StatelessWidget {
   const CurrencyPrice({
@@ -28,7 +29,7 @@ class CurrencyPrice extends StatelessWidget {
           maxLines: 1,
           softWrap: false,
           overflow: TextOverflow.fade,
-          style: AppTextStyles.regular,
+          style: AppTextStyles.regular.copyWith(fontSize: 14.sp),
         ),
         Row(
           mainAxisAlignment: _align == CurrencyPriceAlign.left
@@ -38,6 +39,7 @@ class CurrencyPrice extends StatelessWidget {
             Text(
               _currency.percentChange,
               style: AppTextStyles.regular.copyWith(
+                fontSize: 14.sp,
                 color: _currency.priceState == CurrencyUiPriceState.rise
                     ? AppColors.priceRise
                     : AppColors.priceDrop,
