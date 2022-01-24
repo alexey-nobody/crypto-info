@@ -13,7 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CurrencyListPage extends StatelessWidget {
   const CurrencyListPage({Key? key}) : super(key: key);
 
-  void _onChangeVolumeSorting(
+  void onChangeSorting(
     BuildContext context,
     CurrencyListSortingType sortingType,
   ) {
@@ -28,7 +28,7 @@ class CurrencyListPage extends StatelessWidget {
             children: [
               CurrencyListRowTitles(
                 sortingType: state.sortingType,
-                onChangeSorting: (sortingType) => _onChangeVolumeSorting(
+                onChangeSorting: (sortingType) => onChangeSorting(
                   context,
                   sortingType,
                 ),
