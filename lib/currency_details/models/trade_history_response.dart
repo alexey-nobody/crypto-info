@@ -1,4 +1,4 @@
-import 'package:crypto_info/currency_details/common/date_helper.dart';
+import 'package:crypto_info/common/api/json_helper.dart';
 import 'package:crypto_info/currency_details/models/trade_history_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -24,7 +24,7 @@ class TradeHistoryResponse {
 
   final int tradeID;
 
-  @JsonKey(fromJson: DateHelper.parseServerDate)
+  @JsonKey(fromJson: JsonHelper.parseServerDate)
   final DateTime date;
 
   final TradeHistoryType type;
