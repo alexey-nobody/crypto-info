@@ -34,7 +34,7 @@ class BackArrowButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8.sp, horizontal: 14.sp),
           child: SvgPicture.asset(
             AppAssets.backArrowButton,
-            width: 36.sp,
+            width: 30.sp,
             color: AppColors.normal,
           ),
         ),
