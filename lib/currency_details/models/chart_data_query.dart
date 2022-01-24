@@ -1,10 +1,11 @@
 import 'package:crypto_info/currency_details/models/chart_period.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'chart_data_query.g.dart';
 
 @JsonSerializable(createFactory: false)
-class ChartDataQuery {
+class ChartDataQuery extends Equatable {
   const ChartDataQuery({required this.currencyPair, required this.period});
 
   final String currencyPair;
@@ -54,4 +55,7 @@ class ChartDataQuery {
       DateTime.now().millisecondsSinceEpoch ~/ Duration.millisecondsPerSecond;
 
   Map<String, dynamic> toJson() => _$ChartDataQueryToJson(this);
+
+  @override
+  List<Object?> get props => [currencyPair, period, start, end];
 }
