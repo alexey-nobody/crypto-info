@@ -1,6 +1,7 @@
 import 'package:crypto_info/common/env/build_type.dart';
 import 'package:crypto_info/common/env/config.dart';
 import 'package:crypto_info/common/env/environment.dart';
+import 'package:crypto_info/currency_details/bloc/currency_detail_repository.dart';
 import 'package:crypto_info/currency_list/bloc/currency_list_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -19,7 +20,17 @@ Future<void> registerDependencies() async {
         );
   }
 
-  getIt.registerLazySingleton<CurrencyListRepository>(
-    () => CurrencyListRepository(getIt<Dio>(), baseUrl: config.poloniexApiUrl),
-  );
+  getIt
+    ..registerLazySingleton<CurrencyListRepository>(
+      () => CurrencyListRepository(
+        getIt<Dio>(),
+        baseUrl: config.poloniexApiUrl,
+      ),
+    )
+    ..registerLazySingleton<CurrencyDetailRepository>(
+      () => CurrencyDetailRepository(
+        getIt<Dio>(),
+        baseUrl: config.poloniexApiUrl,
+      ),
+    );
 }
