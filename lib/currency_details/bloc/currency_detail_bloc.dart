@@ -55,7 +55,7 @@ class CurrencyDetailBloc
           .map((tradeHistory) => TradeHistoryUi(
                 date: tradeHistory.date,
                 type: tradeHistory.type,
-                rate: tradeHistory.rate.toString(),
+                rate: tradeHistory.rate,
                 amount: tradeHistory.amount
                     .toStringWithoutTrailingZeros()
                     .toString(),

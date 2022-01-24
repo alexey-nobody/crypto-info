@@ -29,14 +29,12 @@ class TradeHistoryResponse {
 
   final TradeHistoryType type;
 
-  @JsonKey(fromJson: double.parse)
-  final double rate;
+  final String rate;
 
   @JsonKey(fromJson: double.parse)
   final double amount;
 
-  @JsonKey(fromJson: double.parse)
-  final double total;
+  final String total;
 
   final int orderNumber;
 }
