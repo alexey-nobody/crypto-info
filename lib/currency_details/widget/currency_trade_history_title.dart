@@ -15,7 +15,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.sp),
+      padding: EdgeInsets.symmetric(horizontal: 16.sp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

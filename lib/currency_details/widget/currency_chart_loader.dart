@@ -14,7 +14,7 @@ class CurrencyChartLoader extends StatelessWidget {
       child: Container(
         color: Colors.white,
         width: MediaQuery.of(context).size.width,
-        height: 130.sp,
+        height: 160.sp,
       ),
     );
   }

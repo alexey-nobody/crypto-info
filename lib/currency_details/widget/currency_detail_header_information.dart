@@ -13,16 +13,6 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
 
   final CurrencyUi _currency;
 
-  Widget _buildTitle() {
-    return Text(
-      _currency.name,
-      style: AppTextStyles.regular.copyWith(
-        fontWeight: FontWeight.bold,
-        fontSize: 22.sp,
-      ),
-    );
-  }
-
   Widget _buildInformation() {
     return Column(
       children: [
@@ -61,17 +51,7 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _buildTitle(),
-          SizedBox(height: 32.sp),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: _buildInformation(),
-          ),
-        ],
-      ),
+      child: _buildInformation(),
     );
   }
 }
