@@ -13,6 +13,50 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
 
   final CurrencyUi _currency;
 
+  Widget _buildTitle() {
+    return Text(
+      _currency.name,
+      style: AppTextStyles.regular.copyWith(
+        fontWeight: FontWeight.bold,
+        fontSize: 22.sp,
+      ),
+    );
+  }
+
+  Widget _buildInformation() {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Price',
+              style: AppTextStyles.bold,
+            ),
+            Text(
+              'Volume',
+              style: AppTextStyles.bold,
+            ),
+          ],
+        ),
+        SizedBox(height: 6.sp),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CurrencyPrice(
+              currency: _currency,
+              align: CurrencyPriceAlign.left,
+            ),
+            Text(
+              _currency.baseVolume,
+              style: AppTextStyles.regular,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,17 +64,11 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            _currency.name,
-            style: AppTextStyles.regular.copyWith(
-              fontWeight: FontWeight.bold,
-              fontSize: 22.sp,
-            ),
-          ),
-          SizedBox(height: 12.sp),
-          CurrencyPrice(
-            currency: _currency,
-            align: CurrencyPriceAlign.left,
+          _buildTitle(),
+          SizedBox(height: 32.sp),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: _buildInformation(),
           ),
         ],
       ),
