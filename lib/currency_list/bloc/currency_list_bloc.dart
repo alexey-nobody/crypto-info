@@ -15,8 +15,8 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
   })  : _currencyListRepository = currencyListRepository,
         _errorHandlerBloc = errorHandlerBloc,
         super(const CurrencyListState.loading()) {
-    on<CurrencyListLoaded>(_mapCurrencyListLoaded);
-    on<CurrencyListSorted>(_mapCurrencyListSorted);
+    on<CurrencyListLoaded>(_onCurrencyListLoaded);
+    on<CurrencyListSorted>(_onCurrencyListSorted);
   }
 
   final ErrorHandlerBloc _errorHandlerBloc;
@@ -71,7 +71,7 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
     return listCurrencyUi;
   }
 
-  Future<void> _mapCurrencyListLoaded(
+  Future<void> _onCurrencyListLoaded(
     CurrencyListLoaded event,
     Emitter emit,
   ) async {
@@ -87,7 +87,7 @@ class CurrencyListBloc extends Bloc<CurrencyListEvent, CurrencyListState> {
     }
   }
 
-  Future<void> _mapCurrencyListSorted(
+  Future<void> _onCurrencyListSorted(
     CurrencyListSorted event,
     Emitter emit,
   ) async {
