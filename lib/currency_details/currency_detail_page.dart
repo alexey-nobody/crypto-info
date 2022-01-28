@@ -56,9 +56,9 @@ class CurrencyDetailPage extends StatelessWidget {
         children: [
           BackArrowButton(title: _currency.name),
           CurrencyDetailHeaderInformation(currency: _currency),
-          SizedBox(height: 32.sp),
+          SizedBox(height: 32.h),
           _buildCurrencyChart(),
-          SizedBox(height: 32.sp),
+          SizedBox(height: 32.h),
           Expanded(child: _buildTradeHistory()),
         ],
       ),

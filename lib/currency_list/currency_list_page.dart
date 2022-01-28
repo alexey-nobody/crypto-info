@@ -9,7 +9,6 @@ import 'package:crypto_info/currency_list/widget/currency_list_row_titles.dart';
 import 'package:crypto_info/currency_list/widget/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrencyListPage extends StatelessWidget {
   const CurrencyListPage({Key? key}) : super(key: key);
@@ -35,11 +34,11 @@ class CurrencyListPage extends StatelessWidget {
                   sortingType,
                 ),
               ),
-              Divider(
-                height: 1.sp,
-                thickness: 0.5.sp,
-                indent: 20.sp,
-                endIndent: 20.sp,
+              const Divider(
+                height: 1,
+                thickness: 0.5,
+                indent: 20,
+                endIndent: 20,
               ),
               if (state.status == CurrencyListStateStatus.loading)
                 const Expanded(child: CurrencyListLoader()),

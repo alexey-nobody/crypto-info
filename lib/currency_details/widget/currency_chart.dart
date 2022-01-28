@@ -13,7 +13,7 @@ class CurrencyChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160.sp,
+      height: 160.h,
       child: LineChart(
         LineChartData(
           borderData: FlBorderData(show: false),

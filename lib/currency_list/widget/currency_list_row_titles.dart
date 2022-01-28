@@ -62,7 +62,7 @@ class CurrencyListRowTitles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
+        margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -71,12 +71,12 @@ class CurrencyListRowTitles extends StatelessWidget {
             ),
             Expanded(
               child: InkWell(
-                customBorder: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(22)),
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(22.r)),
                 ),
                 onTap: _onChangeVolumeSorting,
                 child: Container(
-                  margin: EdgeInsets.all(10.sp),
+                  margin: EdgeInsets.all(10.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -95,12 +95,12 @@ class CurrencyListRowTitles extends StatelessWidget {
             ),
             Expanded(
               child: InkWell(
-                customBorder: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(22)),
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(22.r)),
                 ),
                 onTap: _onChangePriceSorting,
                 child: Container(
-                  margin: EdgeInsets.all(10.sp),
+                  margin: EdgeInsets.all(10.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

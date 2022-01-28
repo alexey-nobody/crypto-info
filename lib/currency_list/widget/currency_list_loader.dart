@@ -11,14 +11,14 @@ class CurrencyListLoader extends StatelessWidget {
     return ListView.builder(
       itemCount: 4,
       itemBuilder: (context, index) => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
         child: Shimmer.fromColors(
           baseColor: AppColors.primary,
           highlightColor: AppColors.shimmerHighlight,
           child: Container(
             color: Colors.white,
             width: MediaQuery.of(context).size.width,
-            height: 60.sp,
+            height: 60.h,
           ),
         ),
       ),

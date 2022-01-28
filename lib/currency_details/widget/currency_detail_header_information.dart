@@ -29,7 +29,7 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 6.sp),
+        SizedBox(height: 6.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -50,7 +50,7 @@ class CurrencyDetailHeaderInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 8.sp),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       child: _buildInformation(),
     );
   }

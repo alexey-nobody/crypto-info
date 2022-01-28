@@ -8,16 +8,19 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Opacity(
-          opacity: 0.3,
-          child: Image.asset(AppAssets.logo, width: 64.sp),
-        ),
-        SizedBox(width: 16.sp),
-        Text('CRYPTO', style: AppTextStyles.bold),
-      ],
+    return Padding(
+      padding: EdgeInsets.only(top: 16.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Opacity(
+            opacity: 0.3,
+            child: Image.asset(AppAssets.logo, width: 72.w),
+          ),
+          SizedBox(width: 16.w),
+          Text('CRYPTO', style: AppTextStyles.bold),
+        ],
+      ),
     );
   }
 }

@@ -15,7 +15,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.sp),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -23,7 +23,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
             'Trade history',
             style: AppTextStyles.bold,
           ),
-          SizedBox(height: 32.sp),
+          SizedBox(height: 32.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,7 +33,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
                   style: AppTextStyles.bold.copyWith(fontSize: 14.sp),
                 ),
               ),
-              SizedBox(width: 4.sp),
+              SizedBox(width: 4.w),
               Expanded(
                 flex: 2,
                 child: Text(
@@ -42,7 +42,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
                   style: AppTextStyles.bold.copyWith(fontSize: 14.sp),
                 ),
               ),
-              SizedBox(width: 4.sp),
+              SizedBox(width: 4.w),
               Expanded(
                 flex: 2,
                 child: Text(
@@ -53,7 +53,7 @@ class CurrencyTradeHistoryTitle extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16.sp),
+          SizedBox(height: 16.h),
         ],
       ),
     );
