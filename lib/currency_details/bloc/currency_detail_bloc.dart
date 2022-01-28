@@ -20,7 +20,7 @@ class CurrencyDetailBloc
         _currencyDetailRepository = currencyDetailRepository,
         _currencyPair = currencyPair,
         super(const CurrencyDetailState.loading()) {
-    on<CurrencyDetailLoaded>(_mapCurrencyDetailLoaded);
+    on<CurrencyDetailLoaded>(_onCurrencyDetailLoaded);
   }
 
   final ErrorHandlerBloc _errorHandlerBloc;
@@ -28,7 +28,7 @@ class CurrencyDetailBloc
 
   final String _currencyPair;
 
-  Future<void> _mapCurrencyDetailLoaded(
+  Future<void> _onCurrencyDetailLoaded(
     CurrencyDetailLoaded event,
     Emitter emit,
   ) async {
