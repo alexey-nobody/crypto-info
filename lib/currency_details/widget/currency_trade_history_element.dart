@@ -18,19 +18,17 @@ class CurrencyTradeHistoryElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 10.sp),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: Text(
               DateFormat('HH:mm').format(_element.date.toLocal()),
-              style: AppTextStyles.bold.copyWith(
-                fontSize: 14.sp,
-              ),
+              style: AppTextStyles.bold.copyWith(fontSize: 14.sp),
             ),
           ),
-          SizedBox(width: 4.sp),
+          SizedBox(width: 4.w),
           Expanded(
             flex: 2,
             child: Text(
@@ -47,7 +45,7 @@ class CurrencyTradeHistoryElement extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 4.sp),
+          SizedBox(width: 4.w),
           Expanded(
             flex: 2,
             child: Text(
@@ -56,9 +54,7 @@ class CurrencyTradeHistoryElement extends StatelessWidget {
               softWrap: false,
               overflow: TextOverflow.fade,
               textAlign: TextAlign.end,
-              style: AppTextStyles.regular.copyWith(
-                fontSize: 14.sp,
-              ),
+              style: AppTextStyles.regular.copyWith(fontSize: 14.sp),
             ),
           ),
         ],

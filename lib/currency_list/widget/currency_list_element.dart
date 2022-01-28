@@ -25,7 +25,7 @@ class CurrencyListElement extends StatelessWidget {
       child: InkWell(
         onTap: () => _onTap(context),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -35,7 +35,7 @@ class CurrencyListElement extends StatelessWidget {
                   style: AppTextStyles.bold.copyWith(fontSize: 14.sp),
                 ),
               ),
-              SizedBox(width: 4.sp),
+              SizedBox(width: 4.w),
               Expanded(
                 child: Text(
                   _currency.baseVolume,
@@ -46,7 +46,7 @@ class CurrencyListElement extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(width: 4.sp),
+              SizedBox(width: 4.w),
               Expanded(child: CurrencyPrice(currency: _currency)),
             ],
           ),
